@@ -1,0 +1,24 @@
+slug: doh-nhfr
+name: National Health Facility Registry (NHFR)
+tagLine: Master directory of Philippine hospitals and health facilities
+description: Official Department of Health registry and georeferenced directory
+  of licensed public and private hospitals, rural health units, birthing homes
+  and clinics nationwide.
+sector: Health
+secondarySectors:
+  - Government Services
+  - Public Safety
+affiliation: government
+tags:
+  - health
+  - hospitals
+  - clinics
+  - registry
+  - directory
+liveUrl: https://nhfr.doh.gov.ph/
+techStack:
+  - Web GIS
+  - Database
+license: Unspecified
+maintainer: Department of Health (DOH)
+status: active

@@ -1,0 +1,21 @@
+slug: etravel-ph
+name: eTravel Portal
+tagLine: Official electronic travel declaration system for the Philippines
+description: Single electronic travel declaration platform for arriving and departing
+  passengers, integrating immigration, customs, quarantine and health declarations.
+sector: Travel
+secondarySectors:
+  - Government Services
+affiliation: government
+tags:
+  - travel
+  - immigration
+  - customs
+  - portal
+liveUrl: https://etravel.gov.ph/
+techStack:
+  - Next.js
+  - Cloudflare
+license: Unspecified
+maintainer: Bureau of Immigration & DICT
+status: active

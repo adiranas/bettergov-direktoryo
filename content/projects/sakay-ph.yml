@@ -1,0 +1,24 @@
+slug: sakay-ph
+name: Sakay.ph
+tagLine: Multi-modal transit navigation for Philippine commuters
+description: Route planner and public transit guide combining jeepneys, buses,
+  rail lines (LRT/MRT) and ferries across Metro Manila and nearby provinces.
+sector: Infrastructure & Transport
+secondarySectors:
+  - Travel
+  - Government Services
+affiliation: independent
+tags:
+  - transit
+  - commute
+  - jeepney
+  - bus
+  - train
+  - routing
+liveUrl: https://sakay.ph/
+techStack:
+  - React
+  - Transit APIs
+license: Unspecified
+maintainer: By Implication / Sakay.ph
+status: active
