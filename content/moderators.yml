@@ -7,4 +7,13 @@
 #   - name: Full Name
 #     github: their-github-handle
 #     affiliation: independent   # or: bettergov, government, international
-moderators: []
+moderators:
+  - name: "John Doe"
+    github: "johndoe"
+    affiliation: "independent"
+  - name: "Jane Smith"
+    github: "janesmith"
+    affiliation: "bettergov"
+  - name: "Adi Ranas"
+    github: "adiranas"
+    affiliation: "independent"
