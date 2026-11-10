@@ -107,7 +107,7 @@ export function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
           : entry.maintainer,
         entry.license,
       ]
-    : [affiliation, entry.regionHeadquarters, entry.registrationRef];
+    : [affiliation, entry.registrationRef];
   const metaText = meta.filter(Boolean).join(" · ");
 
   return (
@@ -132,19 +132,35 @@ export function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
           </h2>
-          <StatusBadge status={entry.status} />
+          <div className="flex shrink-0 items-center gap-1.5">
+            <span className="inline-flex items-center rounded-sm border border-[var(--color-kapwa-border-weak)] px-1.5 py-0.5 text-xs font-medium text-[var(--color-kapwa-text-support)]">
+              {isProject ? "Civic Tech" : "CSO"}
+            </span>
+            <StatusBadge status={entry.status} />
+          </div>
         </div>
 
         <div className="space-y-1.5">
-          {isProject && (
-            <p className="kapwa-body-sm-strong text-[var(--color-kapwa-text-strong)]">
-              {entry.tagLine}
-            </p>
-          )}
-          {description && (
-            <p className="kapwa-body-sm-default line-clamp-3 text-[var(--color-kapwa-text-support)]">
-              {description}
-            </p>
+          {isProject ? (
+            <>
+              <p className="kapwa-body-sm-strong text-[var(--color-kapwa-text-strong)]">
+                {entry.tagLine}
+              </p>
+              {description && (
+                <p className="kapwa-body-sm-default line-clamp-3 text-[var(--color-kapwa-text-support)]">
+                  {description}
+                </p>
+              )}
+            </>
+          ) : (
+            <>
+              <p className="kapwa-body-sm-strong text-[var(--color-kapwa-text-strong)]">
+                Civil society organization · {entry.regionHeadquarters}
+              </p>
+              <p className="kapwa-body-sm-default line-clamp-3 text-[var(--color-kapwa-text-support)]">
+                Focus areas: {entry.focusAreas.join(", ")}.
+              </p>
+            </>
           )}
         </div>
 
