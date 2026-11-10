@@ -2,11 +2,14 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { parse } from "yaml";
 import {
+  AFFILIATIONS,
   CURATION_STATUSES,
+  MAX_SECONDARY_SECTORS,
   SECTORS,
   type CivicTechProject,
   type CivilSocietyOrg,
   type DirectoryEntry,
+  type Sector,
 } from "@/types/directory";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
@@ -72,7 +75,26 @@ function createReader(file: string, data: Record<string, unknown>) {
     return value;
   };
 
-  return { fail, text, optionalText, list, oneOf, optionalUrl, slug };
+  /** Optional extra sectors: valid, unique, not the primary, and at most the cap. */
+  const secondarySectors = (primary: Sector): Sector[] | undefined => {
+    if (isBlank(data.secondarySectors)) return undefined;
+    const values = list("secondarySectors");
+    const valid = values.every((value) => SECTORS.includes(value as Sector));
+    if (
+      !valid ||
+      values.length > MAX_SECONDARY_SECTORS ||
+      new Set(values).size !== values.length ||
+      values.includes(primary)
+    ) {
+      return fail(
+        "secondarySectors",
+        `up to ${MAX_SECONDARY_SECTORS} different sectors, none equal to the primary sector`,
+      );
+    }
+    return values as Sector[];
+  };
+
+  return { fail, text, optionalText, list, oneOf, optionalUrl, slug, secondarySectors };
 }
 
 type Reader = ReturnType<typeof createReader>;
@@ -82,12 +104,16 @@ function toProject(read: Reader, expectedSlug: string): CivicTechProject {
   const liveUrl = read.optionalUrl("liveUrl");
   if (!repoUrl && !liveUrl) read.fail("repoUrl", "set, or liveUrl must be set");
 
+  const sector = read.oneOf("sector", SECTORS);
+
   return {
     slug: read.slug(expectedSlug),
     name: read.text("name"),
     tagLine: read.text("tagLine"),
     description: read.text("description"),
-    sector: read.oneOf("sector", SECTORS),
+    sector,
+    secondarySectors: read.secondarySectors(sector),
+    affiliation: read.oneOf("affiliation", AFFILIATIONS),
     tags: read.list("tags"),
     repoUrl,
     liveUrl,
@@ -99,12 +125,6 @@ function toProject(read: Reader, expectedSlug: string): CivicTechProject {
 }
 
 function toCso(read: Reader, expectedSlug: string): CivilSocietyOrg {
-  const status = read.oneOf("status", CURATION_STATUSES);
-  const secOrGovRegNumber = read.optionalText("secOrGovRegNumber");
-  if (status === "verified" && !secOrGovRegNumber) {
-    read.fail("secOrGovRegNumber", "set when status is verified");
-  }
-
   const contactEmail = read.optionalText("contactEmail");
   if (contactEmail && !EMAIL_PATTERN.test(contactEmail)) {
     read.fail("contactEmail", "a valid email address");
@@ -113,16 +133,21 @@ function toCso(read: Reader, expectedSlug: string): CivilSocietyOrg {
   const websiteUrl = read.optionalUrl("websiteUrl");
   if (!websiteUrl) return read.fail("websiteUrl", "an http(s) URL");
 
+  const sector = read.oneOf("sector", SECTORS);
+
   return {
     slug: read.slug(expectedSlug),
     name: read.text("name"),
-    sector: read.oneOf("sector", SECTORS),
+    sector,
+    secondarySectors: read.secondarySectors(sector),
+    affiliation: read.oneOf("affiliation", AFFILIATIONS),
     focusAreas: read.list("focusAreas"),
-    secOrGovRegNumber,
+    // Every CSO needs a verifiable registration, so this is never optional.
+    registrationRef: read.text("registrationRef"),
     websiteUrl,
     contactEmail,
     regionHeadquarters: read.text("regionHeadquarters"),
-    status,
+    status: read.oneOf("status", CURATION_STATUSES),
   };
 }
 

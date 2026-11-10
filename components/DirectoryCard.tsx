@@ -1,82 +1,66 @@
-import { Card, CardFooter } from "@bettergov/kapwa/card";
+import { Card } from "@bettergov/kapwa/card";
 import {
   Archive,
   BadgeCheck,
-  Building2,
-  CircleCheck,
   Code2,
   ExternalLink,
-  Globe,
   Mail,
   type LucideIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
-import type { CurationStatus, DirectoryEntry } from "@/types/directory";
+import {
+  AFFILIATION_LABELS,
+  type CurationStatus,
+  type DirectoryEntry,
+} from "@/types/directory";
+
+const MAX_TAGS = 3;
 
 const STATUS_STYLES: Record<
   CurationStatus,
-  { label: string; icon: LucideIcon; className: string }
+  { label: string; icon?: LucideIcon; className: string }
 > = {
   verified: {
     label: "Verified",
     icon: BadgeCheck,
     className:
-      "border-[var(--color-kapwa-border-brand)] bg-[var(--color-kapwa-bg-brand-default)] text-[var(--color-kapwa-text-inverse)]",
+      "bg-[var(--color-kapwa-bg-success-weak)] text-[var(--color-kapwa-text-success)]",
   },
   active: {
     label: "Active",
-    icon: CircleCheck,
-    className:
-      "border-[var(--color-kapwa-border-strong)] bg-[var(--color-kapwa-bg-surface)] text-[var(--color-kapwa-text-support)]",
+    className: "text-[var(--color-kapwa-text-support)]",
   },
   archived: {
     label: "Archived",
     icon: Archive,
     className:
-      "border-[var(--color-kapwa-border-weak)] bg-[var(--color-kapwa-bg-gray-hover)] text-[var(--color-kapwa-text-support)]",
+      "border border-[var(--color-kapwa-border-weak)] text-[var(--color-kapwa-text-support)]",
   },
 };
 
-function StatusPill({ status }: { status: CurationStatus }) {
+function StatusBadge({ status }: { status: CurationStatus }) {
   const { label, icon: Icon, className } = STATUS_STYLES[status];
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${className}`}
+      className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-sm px-1.5 py-0.5 text-xs font-medium ${className}`}
     >
-      <Icon className="size-3" />
+      {Icon ? (
+        <Icon className="size-3.5" />
+      ) : (
+        <span
+          aria-hidden="true"
+          className="size-1.5 rounded-full bg-[var(--color-kapwa-bg-success-default)]"
+        />
+      )}
       {label}
     </span>
   );
 }
 
-function Tags({ items, label }: { items: string[]; label: string }) {
-  if (items.length === 0) return null;
-  return (
-    <ul aria-label={label} className="flex flex-wrap gap-1">
-      {items.map((item) => (
-        <li
-          key={item}
-          className="rounded bg-[var(--color-kapwa-bg-gray-hover)] px-1.5 py-0.5 font-mono text-[11px] text-[var(--color-kapwa-text-support)]"
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
+const displayUrl = (url: string) =>
+  url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 
-function Meta({ label, children }: { label: string; children: ReactNode }) {
-  return (
-    <div className="flex gap-2">
-      <dt className="w-20 shrink-0 text-[var(--color-kapwa-text-support)]">
-        {label}
-      </dt>
-      <dd className="min-w-0 break-words">{children}</dd>
-    </div>
-  );
-}
-
-function CardLink({
+function SecondaryLink({
   href,
   icon: Icon,
   children,
@@ -85,123 +69,133 @@ function CardLink({
   icon: LucideIcon;
   children: ReactNode;
 }) {
-  const isExternal = href.startsWith("http");
-  // Uses the brand text token because Kapwa's link token is below 4.5:1 at this size.
   return (
     <a
       href={href}
-      {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
-      className="inline-flex min-w-0 items-center gap-1 font-mono text-xs text-[var(--color-kapwa-text-brand)] underline-offset-2 hover:underline"
+      {...(href.startsWith("http") && {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      })}
+      // Sits above the card-wide link so it stays separately clickable.
+      className="relative z-10 inline-flex min-h-6 max-w-full min-w-0 items-center gap-1.5 font-mono text-xs text-[var(--color-kapwa-text-support)] underline-offset-2 transition-colors hover:text-[var(--color-kapwa-text-brand)] hover:underline"
     >
       <Icon className="size-3.5 shrink-0" />
       <span className="truncate">{children}</span>
-      {isExternal && (
-        <>
-          <ExternalLink className="size-3 shrink-0" />
-          <span className="sr-only">(opens in a new tab)</span>
-        </>
-      )}
+      <span className="sr-only">(opens in a new tab)</span>
     </a>
   );
 }
 
-const displayUrl = (url: string) =>
-  url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
-
 export function DirectoryCard({ entry }: { entry: DirectoryEntry }) {
   const isProject = entry.kind === "project";
-  const KindIcon = isProject ? Code2 : Building2;
 
-  // CardHeader and CardContent add generic heading and region roles to every
-  // card, so only Card and CardFooter are used here.
+  // The title link stretches over the whole card. A project opens its live
+  // site, or its repository when it has none.
+  const primaryUrl = isProject
+    ? (entry.liveUrl ?? entry.repoUrl!)
+    : entry.websiteUrl;
+
+  const description = isProject ? entry.description : null;
+  const tags = isProject ? entry.tags : entry.focusAreas;
+  const affiliation = AFFILIATION_LABELS[entry.affiliation];
+  const meta = isProject
+    ? [
+        affiliation,
+        // Skips a maintainer that only repeats the affiliation, e.g. "BetterGov.ph".
+        entry.maintainer.toLowerCase().includes(affiliation.toLowerCase())
+          ? null
+          : entry.maintainer,
+        entry.license,
+      ]
+    : [affiliation, entry.regionHeadquarters, entry.registrationRef];
+  const metaText = meta.filter(Boolean).join(" · ");
+
   return (
     <Card
       aria-label={entry.name}
-      className="flex h-full flex-col transition-colors hover:border-[var(--color-kapwa-border-strong)]"
+      className="group relative flex h-full flex-col rounded-lg transition-[border-color,box-shadow] duration-200 hover:border-[var(--color-kapwa-border-strong)] hover:shadow-md focus-within:border-[var(--color-kapwa-border-strong)]"
     >
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <div className="flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-wide text-[var(--color-kapwa-text-support)]">
-            <KindIcon className="size-3.5" />
-            {isProject ? "Civic tech" : "CSO"}
-          </span>
-          <StatusPill status={entry.status} />
+      <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className="flex items-start justify-between gap-3">
+          <h2 className="kapwa-label-lg text-pretty">
+            <a
+              href={primaryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 after:absolute after:inset-0 after:content-[''] group-hover:text-[var(--color-kapwa-text-brand)]"
+            >
+              {entry.name}
+              <ExternalLink
+                aria-hidden="true"
+                className="ml-1.5 inline size-3.5 -translate-y-px text-[var(--color-kapwa-text-support)] opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100"
+              />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </h2>
+          <StatusBadge status={entry.status} />
         </div>
 
-        <div className="space-y-1">
-          <h2 className="kapwa-label-md">{entry.name}</h2>
+        <div className="space-y-1.5">
           {isProject && (
-            <p className="kapwa-body-sm-strong text-[var(--color-kapwa-text-support)]">
+            <p className="kapwa-body-sm-strong text-[var(--color-kapwa-text-strong)]">
               {entry.tagLine}
+            </p>
+          )}
+          {description && (
+            <p className="kapwa-body-sm-default line-clamp-3 text-[var(--color-kapwa-text-support)]">
+              {description}
             </p>
           )}
         </div>
 
-        <div>
-          <span className="inline-block rounded-full border border-[var(--color-kapwa-bg-surface-brand)] bg-[var(--color-kapwa-bg-brand-weak)] px-2 py-0.5 text-xs font-medium text-[var(--color-kapwa-text-brand)]">
-            {entry.sector}
-          </span>
-        </div>
-
-        {isProject && (
-          <p className="kapwa-body-sm-default text-[var(--color-kapwa-text-support)]">
-            {entry.description}
-          </p>
-        )}
-
-        <dl className="space-y-1 font-mono text-xs">
-          {isProject ? (
-            <>
-              <Meta label="Maintainer">{entry.maintainer}</Meta>
-              <Meta label="License">{entry.license}</Meta>
-            </>
-          ) : (
-            <>
-              <Meta label="Based in">{entry.regionHeadquarters}</Meta>
-              {entry.secOrGovRegNumber && (
-                <Meta label="Reg. no.">{entry.secOrGovRegNumber}</Meta>
-              )}
-            </>
-          )}
-        </dl>
-
-        {isProject ? (
-          <div className="space-y-1">
-            <Tags items={entry.tags} label="Tags" />
-            <Tags items={entry.techStack} label="Tech stack" />
+        <div className="mt-auto space-y-2 pt-1">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="rounded-sm bg-[var(--color-kapwa-bg-surface-brand)] px-2 py-0.5 text-xs font-medium text-[var(--color-kapwa-text-brand-bold)]">
+              {entry.sector}
+            </span>
+            {entry.secondarySectors?.map((extra) => (
+              <span
+                key={extra}
+                className="rounded-sm border border-[var(--color-kapwa-border-weak)] px-2 py-0.5 text-xs font-medium text-[var(--color-kapwa-text-support)]"
+              >
+                {extra}
+              </span>
+            ))}
+            {tags.slice(0, MAX_TAGS).map((tag) => (
+              <span
+                key={tag}
+                className="font-mono text-xs text-[var(--color-kapwa-text-support)]"
+              >
+                #{tag}
+              </span>
+            ))}
           </div>
-        ) : (
-          <Tags items={entry.focusAreas} label="Focus areas" />
-        )}
+          <p className="font-mono text-xs text-[var(--color-kapwa-text-support)]">
+            {metaText}
+          </p>
+        </div>
       </div>
 
-      <CardFooter className="flex flex-col gap-1 p-4 md:p-4">
+      <div className="flex flex-col items-start border-t border-[var(--color-kapwa-border-weak)] px-5 py-2.5">
         {isProject ? (
-          <>
-            {entry.liveUrl && (
-              <CardLink href={entry.liveUrl} icon={Globe}>
-                {displayUrl(entry.liveUrl)}
-              </CardLink>
-            )}
-            {entry.repoUrl && (
-              <CardLink href={entry.repoUrl} icon={Code2}>
-                {displayUrl(entry.repoUrl)}
-              </CardLink>
-            )}
-          </>
+          entry.repoUrl && (
+            <SecondaryLink href={entry.repoUrl} icon={Code2}>
+              {displayUrl(entry.repoUrl)}
+            </SecondaryLink>
+          )
         ) : (
-          <>
-            <CardLink href={entry.websiteUrl} icon={Globe}>
-              {displayUrl(entry.websiteUrl)}
-            </CardLink>
-            {entry.contactEmail && (
-              <CardLink href={`mailto:${entry.contactEmail}`} icon={Mail}>
-                {entry.contactEmail}
-              </CardLink>
-            )}
-          </>
+          entry.contactEmail && (
+            <SecondaryLink href={`mailto:${entry.contactEmail}`} icon={Mail}>
+              {entry.contactEmail}
+            </SecondaryLink>
+          )
         )}
-      </CardFooter>
+        {!(isProject ? entry.repoUrl : entry.contactEmail) && (
+          <span className="min-h-6 truncate font-mono text-xs leading-6 text-[var(--color-kapwa-text-support)]">
+            {displayUrl(primaryUrl)}
+          </span>
+        )}
+      </div>
     </Card>
   );
 }
