@@ -28,7 +28,7 @@ Listings are stored as validated YAML files in this repository and displayed as 
 
 1. Clone the repository:
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/adiranas/bettergov-direktoryo.git
    cd bettergov-direktoryo
    ```
 
