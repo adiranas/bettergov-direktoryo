@@ -1,0 +1,10 @@
+# The public list of Moderators who may approve Submissions.
+#
+# A BetterGov-affiliated or government Submission needs two approvals from
+# people on this list, so at least three Moderators must be named before the
+# directory accepts those. Add one entry per person:
+#
+#   - name: Full Name
+#     github: their-github-handle
+#     affiliation: independent   # or: bettergov, government, international
+moderators: []
