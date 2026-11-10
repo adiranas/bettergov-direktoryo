@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:listings": "node scripts/check-listings.ts"
   },
   "dependencies": {
     "@bettergov/kapwa": "^1.4.1",
