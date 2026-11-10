@@ -1,0 +1,118 @@
+name: Submit a civil society organization
+description: Suggest a registered civil society organization (CSO) for the directory.
+title: "[Submit CSO] "
+labels:
+  - needs-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. A community Moderator reviews each submission against `CURATION_CHECKLIST.md` in this repository.
+
+        **A CSO is listed only if its registration can be checked against a public record.** If no public record exists, the submission cannot be accepted.
+
+        **This issue is public.** Do not include personal phone numbers or personal email addresses.
+  - type: input
+    id: name
+    attributes:
+      label: Organization name
+      description: The name exactly as registered.
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://example.org.ph
+    validations:
+      required: true
+  - type: dropdown
+    id: registration-agency
+    attributes:
+      label: Registering agency
+      options:
+        - SEC (Securities and Exchange Commission)
+        - DSWD (Department of Social Welfare and Development)
+        - CDA (Cooperative Development Authority)
+        - DILG (Department of the Interior and Local Government)
+        - Created by law
+        - Other government agency
+    validations:
+      required: true
+  - type: input
+    id: registration-number
+    attributes:
+      label: Registration number or law
+      placeholder: "CN201234567, or Republic Act No. 10072"
+    validations:
+      required: true
+  - type: input
+    id: registration-record
+    attributes:
+      label: Link to a public record
+      description: A registry page, or the certificate published on the organization's own website. Moderators open this link to check the match.
+      placeholder: https://example.org.ph/about/registration
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What does the organization do?
+      description: Two or three sentences on its public, non-profit purpose and who it serves.
+    validations:
+      required: true
+  - type: dropdown
+    id: sector
+    attributes:
+      label: Primary sector
+      options:
+        - Disaster & Recovery
+        - Social & Welfare
+        - Government Services
+        - Travel
+        - Health
+        - Education
+        - Business & Economy
+        - Taxes & Finance
+        - Labor & Employment
+        - Law & Justice
+        - Elections & Governance
+        - Transparency & Procurement
+        - Agriculture & Environment
+        - Infrastructure & Transport
+        - Public Safety
+    validations:
+      required: true
+  - type: input
+    id: focus-areas
+    attributes:
+      label: Focus areas
+      description: Comma-separated.
+      placeholder: Disaster response, Blood services
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Region of headquarters
+      placeholder: National Capital Region (Mandaluyong City)
+    validations:
+      required: true
+  - type: input
+    id: contact-email
+    attributes:
+      label: Organizational email (optional)
+      description: Only if the organization already publishes it on its own website. Never a personal address.
+    validations:
+      required: false
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Confirmation
+      options:
+        - label: It is a non-profit organization serving a public purpose.
+          required: true
+        - label: It is non-partisan and does not promote a candidate, party or campaign.
+          required: true
+        - label: The registration details above match the public record I linked.
+          required: true

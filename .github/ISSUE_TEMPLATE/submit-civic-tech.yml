@@ -1,5 +1,5 @@
 name: Submit a civic tech project
-description: Suggest an open tool, dataset, bot or public dashboard for the directory.
+description: Suggest an open tool, dataset, API, bot or public dashboard for the directory.
 title: "[Submit] "
 labels:
   - needs-review
@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for contributing. A community moderator reviews each submission against `CURATION_CHECKLIST.md` in this repository before it is listed.
+        Thanks for contributing. A community Moderator reviews each submission against `CURATION_CHECKLIST.md` in this repository before it is listed.
 
         **This issue is public.** Do not include private phone numbers or personal email addresses.
   - type: input
@@ -50,7 +50,8 @@ body:
   - type: dropdown
     id: sector
     attributes:
-      label: Sector
+      label: Primary sector
+      description: The one sector it is filed and counted under.
       options:
         - Disaster & Recovery
         - Social & Welfare
@@ -67,6 +68,26 @@ body:
         - Agriculture & Environment
         - Infrastructure & Transport
         - Public Safety
+    validations:
+      required: true
+  - type: input
+    id: secondary-sectors
+    attributes:
+      label: Other sectors where it belongs (optional)
+      description: Up to two. A Moderator decides whether to add them.
+      placeholder: Public Safety, Health
+    validations:
+      required: false
+  - type: dropdown
+    id: affiliation
+    attributes:
+      label: Who runs it?
+      description: Be honest here. Moderators check, and the answer is shown to readers.
+      options:
+        - Independent (volunteers, a company or a non-profit with no government or BetterGov tie)
+        - Government (including state universities and government research bodies)
+        - BetterGov
+        - International or multilateral organization
     validations:
       required: true
   - type: input
@@ -104,18 +125,28 @@ body:
     id: maintainer-contact
     attributes:
       label: Maintainer contact
-      description: A public channel, such as a GitHub handle or project email.
+      description: A public channel, such as a GitHub handle or project email. It stays in this issue and is not published.
       placeholder: "@github-handle"
     validations:
       required: true
+  - type: textarea
+    id: proof-of-control
+    attributes:
+      label: Proof you control it (optional, earns the "Verified" label)
+      description: |
+        Any one of: a file you committed to the repository, a message posted from the project's own domain or official account, or a reply on this issue from the repository owner's own GitHub account. Paste the link.
+    validations:
+      required: false
   - type: checkboxes
     id: attestation
     attributes:
       label: Confirmation
       options:
-        - label: It provides a public benefit and is not primarily a commercial product.
+        - label: It is free to use and provides a public benefit, and is not primarily a commercial product.
           required: true
         - label: It is non-partisan and does not promote a candidate, party or campaign.
           required: true
         - label: It does not collect personal data beyond what its stated purpose needs.
           required: true
+        - label: If it is a volunteer-run portal for a local government, its site says plainly that it is not the official government website.
+          required: false
