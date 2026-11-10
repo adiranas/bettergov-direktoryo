@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { LOGO_ICON_WHITE, SUBMIT_PROJECT_URL } from "@/lib/site";
+import {
+  LOGO_ICON_WHITE,
+  SUBMIT_CSO_URL,
+  SUBMIT_PROJECT_URL,
+} from "@/lib/site";
 
 const LINK_CLASS =
   "text-[var(--color-kapwa-text-inverse-subtle)] underline-offset-2 transition-colors hover:text-[var(--color-kapwa-text-inverse)] hover:underline";
@@ -37,6 +41,9 @@ export function SiteFooter() {
           </a>
           <a href={SUBMIT_PROJECT_URL} className={LINK_CLASS}>
             Submit a project
+          </a>
+          <a href={SUBMIT_CSO_URL} className={LINK_CLASS}>
+            Submit an organization
           </a>
         </nav>
       </div>

@@ -1,6 +1,6 @@
-import { Plus } from "lucide-react";
 import Link from "next/link";
-import { LOGO_ICON_PRIMARY, SUBMIT_PROJECT_URL } from "@/lib/site";
+import { SubmitDropdown } from "@/components/SubmitDropdown";
+import { LOGO_ICON_PRIMARY } from "@/lib/site";
 
 export function SiteHeader() {
   return (
@@ -31,17 +31,7 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        {/* Kapwa's Button only renders <button>, so this link matches its primary style. */}
-        <a
-          href={SUBMIT_PROJECT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-md bg-[var(--color-kapwa-bg-brand-default)] px-3 text-sm font-medium text-[var(--color-kapwa-text-inverse)] shadow-xs transition-colors hover:bg-[var(--color-kapwa-bg-brand-hover)] active:bg-[var(--color-kapwa-bg-brand-active)] sm:px-4"
-        >
-          <Plus className="size-4" />
-          Submit<span className="hidden sm:inline"> a project</span>
-          <span className="sr-only">(opens GitHub in a new tab)</span>
-        </a>
+        <SubmitDropdown />
       </div>
     </header>
   );

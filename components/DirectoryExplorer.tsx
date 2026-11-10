@@ -7,7 +7,7 @@ import { DirectoryCard } from "@/components/DirectoryCard";
 import { SectorFilter, TypeFilter } from "@/components/DirectoryFilters";
 import { DirectoryHero } from "@/components/DirectoryHero";
 import { useDirectorySearch } from "@/hooks/useDirectorySearch";
-import { SUBMIT_PROJECT_URL } from "@/lib/site";
+import { SUBMIT_CSO_URL, SUBMIT_PROJECT_URL } from "@/lib/site";
 import type { DirectoryEntry } from "@/types/directory";
 
 export function DirectoryExplorer({ entries }: { entries: DirectoryEntry[] }) {
@@ -90,16 +90,28 @@ export function DirectoryExplorer({ entries }: { entries: DirectoryEntry[] }) {
                   Clear search and filters
                 </Button>
                 {sectorIsEmpty && (
-                  <a
-                    href={SUBMIT_PROJECT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-8 items-center gap-1.5 rounded-md bg-[var(--color-kapwa-bg-brand-default)] px-3 text-sm font-medium text-[var(--color-kapwa-text-inverse)] shadow-xs transition-colors hover:bg-[var(--color-kapwa-bg-brand-hover)]"
-                  >
-                    <Plus className="size-4" />
-                    Submit a project
-                    <span className="sr-only">(opens GitHub in a new tab)</span>
-                  </a>
+                  <>
+                    <a
+                      href={SUBMIT_PROJECT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 items-center gap-1.5 rounded-md bg-[var(--color-kapwa-bg-brand-default)] px-3 text-sm font-medium text-[var(--color-kapwa-text-inverse)] shadow-xs transition-colors hover:bg-[var(--color-kapwa-bg-brand-hover)]"
+                    >
+                      <Plus className="size-4" />
+                      Submit a project
+                      <span className="sr-only">(opens GitHub in a new tab)</span>
+                    </a>
+                    <a
+                      href={SUBMIT_CSO_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[var(--color-kapwa-border-weak)] bg-[var(--color-kapwa-bg-surface)] px-3 text-sm font-medium text-[var(--color-kapwa-text-default)] shadow-xs transition-colors hover:bg-[var(--color-kapwa-bg-brand-weak)] hover:text-[var(--color-kapwa-text-brand)]"
+                    >
+                      <Plus className="size-4" />
+                      Submit an organization
+                      <span className="sr-only">(opens GitHub in a new tab)</span>
+                    </a>
+                  </>
                 )}
               </div>
             </div>
