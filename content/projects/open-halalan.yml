@@ -1,0 +1,20 @@
+slug: open-halalan
+name: OpenHalalan
+tagLine: Open dataset of Philippine election results
+description: Reproducible dataset of Philippine national and local election
+  results from 2001 to 2025 for researchers, journalists, policymakers and the
+  public, with a published completeness audit.
+sector: Elections & Governance
+affiliation: independent
+tags:
+  - elections
+  - comelec
+  - open-data
+  - dataset
+repoUrl: https://github.com/RobertRLeung/OpenHalalan
+liveUrl: https://robertrleung.github.io/OpenHalalan/
+techStack:
+  - Python
+license: ODbL-1.0
+maintainer: RobertRLeung
+status: active

@@ -1,0 +1,21 @@
+slug: better-san-fernando
+name: BetterSanFernando
+tagLine: Independent civic portal for San Fernando, Pampanga
+description: Independent portal that organizes city services, public projects,
+  offices, legislation, transparency information and barangay data for San
+  Fernando, Pampanga. Not the official city website.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - san-fernando
+  - pampanga
+  - transparency
+repoUrl: https://github.com/bettersanfernando/bettersanfernando
+liveUrl: https://bettersanfernando.org/
+techStack:
+  - TypeScript
+  - JavaScript
+license: CC0-1.0
+maintainer: BetterSanFernando
+status: active

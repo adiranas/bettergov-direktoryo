@@ -1,0 +1,20 @@
+slug: better-lgu-directory
+name: Better LGU Directory
+tagLine: Directory of community LGU transparency portals
+description: Community-maintained list of Better LGU digital transparency
+  portals across the Philippines, for finding an existing portal, contributing
+  to one or starting your own.
+sector: Government Services
+affiliation: bettergov
+tags:
+  - lgu
+  - directory
+  - local-government
+  - transparency
+repoUrl: https://github.com/jmacj/better-lgu-directory
+liveUrl: https://lgu.bettergov.ph/
+techStack:
+  - JavaScript
+license: CC-BY-4.0
+maintainer: jmacj
+status: active

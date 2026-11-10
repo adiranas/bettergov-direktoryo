@@ -1,0 +1,19 @@
+slug: ph-tax-directory
+name: Philippines Tax Directory
+tagLine: Tax calculator, forms and filing calendar
+description: Open-source tax calculator and directory with multiple tax types, a
+  forms library, a filing calendar and tax FAQs.
+sector: Taxes & Finance
+affiliation: bettergov
+tags:
+  - tax
+  - bir
+  - calculator
+  - forms
+repoUrl: https://github.com/bettergovph/ph-tax-directory
+liveUrl: https://taxdirectory.bettergov.ph/
+techStack:
+  - TypeScript
+license: CC0-1.0
+maintainer: BetterGov.ph
+status: active

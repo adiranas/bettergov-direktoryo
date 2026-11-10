@@ -1,0 +1,24 @@
+slug: philippines-payroll-data
+name: SE Asia Payroll Knowledge Base
+tagLine: Primary-sourced payroll and labor reference
+description: Machine-readable reference to Philippine income tax, SSS,
+  PhilHealth, Pag-IBIG, DOLE labor rules and minimum wages, with each figure
+  cited to its government source. Also covers five other countries.
+sector: Labor & Employment
+secondarySectors:
+  - Taxes & Finance
+affiliation: independent
+tags:
+  - payroll
+  - minimum-wage
+  - sss
+  - philhealth
+  - pag-ibig
+repoUrl: https://github.com/open-payroll-data/philippines-payroll-data
+liveUrl: https://open-payroll-data.github.io/philippines-payroll-data/
+techStack:
+  - JSON
+  - Markdown
+license: MIT
+maintainer: open-payroll-data
+status: active

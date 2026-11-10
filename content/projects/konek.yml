@@ -1,0 +1,17 @@
+slug: konek
+name: KONEK
+tagLine: Free open courses from Filipino educators
+description: "Kolektibong Online Network para sa Edukasyon at Komunikasyon: an
+  open learning platform inspired by UP Diliman’s UVLe, with free curated
+  courses and learning resources."
+sector: Education
+affiliation: government
+tags:
+  - open-education
+  - courses
+  - oer
+liveUrl: https://konek.upd.edu.ph/
+techStack: []
+license: Unspecified
+maintainer: UP Diliman
+status: active

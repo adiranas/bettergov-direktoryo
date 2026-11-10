@@ -1,0 +1,25 @@
+slug: emergency-hotlines
+name: Philippines Emergency Hotlines
+tagLine: Emergency numbers by city and type
+description: Installable web app for finding police, fire, medical and
+  government hotlines by city or municipality, with offline access to the
+  hotline data.
+sector: Public Safety
+secondarySectors:
+  - Disaster & Recovery
+affiliation: bettergov
+tags:
+  - hotlines
+  - emergency
+  - pwa
+  - offline
+repoUrl: https://github.com/bettergovph/hotlines
+liveUrl: https://hotlines.bettergov.ph/
+techStack:
+  - Next.js
+  - React
+  - TypeScript
+  - Tailwind CSS
+license: Unspecified
+maintainer: BetterGov.ph
+status: active

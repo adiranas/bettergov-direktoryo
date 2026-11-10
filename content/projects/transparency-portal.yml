@@ -1,0 +1,20 @@
+slug: transparency-portal
+name: Transparency Portal Kit
+tagLine: Build a budget portal for your LGU or DPWH office
+description: Forkable static website that shows citizens every FY 2027 budget
+  project for one LGU or DPWH district office, with enacted budgets from 2020 to
+  2026 and links to source pages.
+sector: Transparency & Procurement
+affiliation: bettergov
+tags:
+  - budget
+  - lgu
+  - dpwh
+  - starter-kit
+repoUrl: https://github.com/bettergovph/transparency-portal
+liveUrl: https://transparency-portal.bettergov.workers.dev/
+techStack:
+  - TypeScript
+license: MIT
+maintainer: BetterGov.ph
+status: active

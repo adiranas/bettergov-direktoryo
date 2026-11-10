@@ -1,0 +1,22 @@
+slug: philippines-json-maps
+name: Philippines JSON Maps
+tagLine: Administrative boundary maps in GeoJSON and TopoJSON
+description: Philippine administrative boundaries from country to barangay level
+  at several resolutions, with PSGC codes for joining to PSA statistics or other
+  datasets.
+sector: Government Services
+affiliation: independent
+tags:
+  - geojson
+  - topojson
+  - maps
+  - psgc
+  - barangay
+repoUrl: https://github.com/faeldon/philippines-json-maps
+liveUrl: https://james.faeldon.com/json-maps-of-philippine-administrative-boundaries
+techStack:
+  - GeoJSON
+  - TopoJSON
+license: MIT
+maintainer: James Faeldon
+status: active

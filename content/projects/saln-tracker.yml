@@ -1,0 +1,23 @@
+slug: saln-tracker
+name: SALN Tracker Philippines
+tagLine: Track public officials’ asset disclosures
+description: Aggregates Statement of Assets, Liabilities and Net Worth records
+  from official channels so citizens can see the public financial disclosures of
+  national officials.
+sector: Transparency & Procurement
+secondarySectors:
+  - Elections & Governance
+affiliation: bettergov
+tags:
+  - saln
+  - accountability
+  - public-officials
+repoUrl: https://github.com/JHNLWHD/saln-tracker-ph
+liveUrl: https://saln.bettergov.ph/
+techStack:
+  - React Router
+  - TypeScript
+  - Tailwind CSS
+license: MIT
+maintainer: JHNLWHD
+status: active

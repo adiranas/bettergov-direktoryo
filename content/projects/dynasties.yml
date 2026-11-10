@@ -1,0 +1,24 @@
+slug: dynasties
+name: Dynasties by BetterGov.ph
+tagLine: Who holds local office, and for how long
+description: Maps every candidate for local office since 2001 by region,
+  province and town, showing who won, who lost, and which surnames hold seats.
+  Built from OpenHalalan data.
+sector: Elections & Governance
+secondarySectors:
+  - Transparency & Procurement
+affiliation: bettergov
+tags:
+  - elections
+  - local-government
+  - public-officials
+  - dataset
+repoUrl: https://github.com/bettergovph/officials-network-graph
+liveUrl: https://dynasties.bettergov.ph/
+techStack:
+  - TypeScript
+  - SQLite
+  - Cloudflare D1
+license: Unspecified
+maintainer: BetterGov.ph
+status: active

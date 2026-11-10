@@ -1,0 +1,16 @@
+slug: bettergov-portal
+name: BetterGov.ph
+tagLine: Community-run portal for the Philippines
+description: Volunteer-run portal for finding government information and
+  services, available in multiple Philippine languages.
+sector: Government Services
+affiliation: bettergov
+tags:
+  - portal
+  - services
+  - multilingual
+liveUrl: https://bettergov.ph/
+techStack: []
+license: Unspecified
+maintainer: BetterGov.ph
+status: active

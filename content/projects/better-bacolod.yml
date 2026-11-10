@@ -1,0 +1,20 @@
+slug: better-bacolod
+name: BetterBacolod
+tagLine: Community portal for Bacolod City
+description: Community portal for Bacolod City government services, permits,
+  barangays, hotlines, public data and local civic information.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - bacolod
+  - negros-occidental
+  - services
+repoUrl: https://github.com/betterbacolod/betterbacolod
+liveUrl: https://betterbacolod.org/
+techStack:
+  - TypeScript
+  - Python
+license: CC0-1.0
+maintainer: BetterBacolod contributors
+status: active

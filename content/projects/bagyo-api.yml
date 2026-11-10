@@ -1,0 +1,23 @@
+slug: bagyo-api
+name: BagyoAPI
+tagLine: PAGASA cyclone bulletins as a REST API
+description: Independent open API that turns PAGASA tropical cyclone bulletins
+  into structured JSON with wind signals, cyclone tracks and PSGC location
+  codes. Not affiliated with PAGASA, and not for sole use in life-safety
+  decisions.
+sector: Disaster & Recovery
+affiliation: independent
+tags:
+  - api
+  - typhoon
+  - pagasa
+  - psgc
+repoUrl: https://github.com/edwardguevarra/bagyo-api
+techStack:
+  - TypeScript
+  - PostgreSQL
+  - Redis
+  - Docker
+license: MIT
+maintainer: edwardguevarra
+status: active

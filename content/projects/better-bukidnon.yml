@@ -1,0 +1,22 @@
+slug: better-bukidnon
+name: BetterBukidnon
+tagLine: Volunteer civic portal for Bukidnon
+description: Volunteer-run portal for Bukidnon provincial services, officials,
+  hotlines, statistics and public records in English, Filipino and Cebuano. Not
+  an official government website.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - bukidnon
+  - mindanao
+  - multilingual
+repoUrl: https://github.com/Better-Bukidnon/betterbukidnon
+liveUrl: https://betterbukidnon.org/
+techStack:
+  - HTML
+  - JavaScript
+  - TypeScript
+license: MIT
+maintainer: BetterBukidnon contributors
+status: active

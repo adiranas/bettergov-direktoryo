@@ -1,0 +1,21 @@
+slug: open-data-portal
+name: BetterGov Open Data Portal
+tagLine: Search, preview and download public datasets
+description: Community-run portal and API for finding, previewing and
+  downloading open datasets published by Philippine government agencies and
+  community researchers.
+sector: Government Services
+affiliation: bettergov
+tags:
+  - open-data
+  - datasets
+  - api
+  - mcp
+repoUrl: https://github.com/bettergovph/open-data-portal
+liveUrl: https://data.bettergov.ph/
+techStack:
+  - TypeScript
+  - Cloudflare D1
+license: CC0-1.0
+maintainer: BetterGov.ph
+status: active

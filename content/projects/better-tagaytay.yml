@@ -1,0 +1,20 @@
+slug: better-tagaytay
+name: BetterTagaytay
+tagLine: Independent guide to Tagaytay City services
+description: Independent community website for Tagaytay City services, permit
+  requirements, official forms, public documents and local information.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - tagaytay
+  - cavite
+  - permits
+repoUrl: https://github.com/Arlovzki/bettertagaytay
+liveUrl: https://www.bettertagaytay.org/
+techStack:
+  - TypeScript
+  - Python
+license: CC0-1.0
+maintainer: Arlovzki
+status: active

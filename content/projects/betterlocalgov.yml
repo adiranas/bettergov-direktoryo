@@ -1,0 +1,23 @@
+slug: betterlocalgov
+name: BetterLocalGov
+tagLine: Website starter kit for local governments
+description: Open-source, multilingual and WCAG 2.1 accessible website kit for
+  Philippine local government units, with YAML-based content.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - starter-kit
+  - accessibility
+  - multilingual
+repoUrl: https://github.com/iyanski/betterlocalgov
+liveUrl: https://betterlocalgov.vercel.app/
+techStack:
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Vite
+  - Kapwa
+license: CC0-1.0
+maintainer: iyanski
+status: active

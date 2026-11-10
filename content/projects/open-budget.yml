@@ -1,0 +1,24 @@
+slug: open-budget
+name: BetterGov Budget
+tagLine: Explore the national budget line by line
+description: Explorer, API and open data for the Philippine national budget,
+  with NEP and GAA records from 2020 onward and year-on-year comparison by
+  department, program, region and expense class.
+sector: Taxes & Finance
+secondarySectors:
+  - Transparency & Procurement
+affiliation: bettergov
+tags:
+  - budget
+  - nep
+  - gaa
+  - api
+  - open-data
+repoUrl: https://github.com/bettergovph/open-budget-data
+liveUrl: https://budget.bettergov.ph/
+techStack:
+  - Python
+  - Neo4j
+license: CC0-1.0
+maintainer: BetterGov.ph
+status: active

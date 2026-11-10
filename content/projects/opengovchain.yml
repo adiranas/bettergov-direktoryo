@@ -1,0 +1,22 @@
+slug: opengovchain
+name: OpenGovChain
+tagLine: Blockchain-backed open contracting records
+description: Tokenless-by-default blockchain platform for storing government
+  datasets, including Open Contracting (OCDS), infrastructure (OC4IDS) and
+  national budget records.
+sector: Transparency & Procurement
+affiliation: bettergov
+tags:
+  - blockchain
+  - ocds
+  - oc4ids
+  - open-contracting
+repoUrl: https://github.com/bettergovph/govchain
+liveUrl: https://govchain.bettergov.ph/
+techStack:
+  - Cosmos SDK
+  - IPFS
+  - TypeScript
+license: MIT
+maintainer: BetterGov.ph
+status: active

@@ -1,11 +1,13 @@
 slug: flood-watch
 name: FloodLens PH (Flood Watch)
 tagLine: Flood-control map and DPWH project viewer
-description: >-
-  Interactive flood simulation and infrastructure planning tool that overlays
-  Project NOAH hazard maps with DPWH flood-control project locations, with
-  scenarios from current conditions up to 100-year floods.
+description: Interactive flood simulation and infrastructure planning tool that
+  overlays Project NOAH hazard maps with DPWH flood-control project locations,
+  with scenarios from current conditions up to 100-year floods.
 sector: Disaster & Recovery
+secondarySectors:
+  - Public Safety
+affiliation: bettergov
 tags:
   - flood-control
   - hazard-maps

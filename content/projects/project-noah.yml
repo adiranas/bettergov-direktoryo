@@ -1,0 +1,21 @@
+slug: project-noah
+name: Project NOAH
+tagLine: Know your exposure to floods, landslides and storm surges
+description: Nationwide hazard assessment platform that shows how likely a
+  location is to be affected by floods, landslides and storm surges, with
+  rainfall, typhoon track and weather layers.
+sector: Disaster & Recovery
+secondarySectors:
+  - Public Safety
+affiliation: government
+tags:
+  - hazard-maps
+  - flood
+  - landslide
+  - storm-surge
+  - weather
+liveUrl: https://noah.up.edu.ph/
+techStack: []
+license: Unspecified
+maintainer: University of the Philippines
+status: active

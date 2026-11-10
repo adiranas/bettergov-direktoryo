@@ -1,0 +1,22 @@
+slug: handa360
+name: Handa360
+tagLine: Personalized disaster-preparedness checklists
+description: Offline-capable web app that turns general preparedness guidance
+  into one action plan for a chosen hazard, household situation and locality,
+  including local DRRMO contacts.
+sector: Disaster & Recovery
+affiliation: independent
+tags:
+  - preparedness
+  - offline
+  - checklist
+  - drrm
+repoUrl: https://github.com/BFUR64/handa360
+liveUrl: https://bfur64.github.io/handa360/
+techStack:
+  - JavaScript
+  - HTML
+  - CSS
+license: MIT
+maintainer: BFUR64
+status: active

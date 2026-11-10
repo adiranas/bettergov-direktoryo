@@ -1,0 +1,20 @@
+slug: hazardhunter-ph
+name: HazardHunterPH
+tagLine: Hazard assessment for any location
+description: Government one-stop tool for checking the seismic, volcanic and
+  hydrometeorological hazards of a location, by search, coordinates or current
+  position.
+sector: Disaster & Recovery
+secondarySectors:
+  - Public Safety
+affiliation: government
+tags:
+  - hazard-assessment
+  - earthquake
+  - volcano
+  - georisk
+liveUrl: https://hazardhunter.georisk.gov.ph/
+techStack: []
+license: Unspecified
+maintainer: GeoRiskPH (DOST-PHIVOLCS)
+status: active

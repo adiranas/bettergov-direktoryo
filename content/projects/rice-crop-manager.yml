@@ -1,0 +1,17 @@
+slug: rice-crop-manager
+name: Rice Crop Manager Advisory Service
+tagLine: Site-specific advice for rice farmers
+description: Free digital service from IRRI and PhilRice that gives rice farmers
+  site-specific crop and nutrient management recommendations.
+sector: Agriculture & Environment
+affiliation: government
+tags:
+  - rice
+  - farmers
+  - nutrient-management
+  - advisory
+liveUrl: https://rcmas.philrice.gov.ph/home
+techStack: []
+license: Unspecified
+maintainer: IRRI and PhilRice
+status: active

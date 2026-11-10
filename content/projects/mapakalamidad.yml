@@ -1,0 +1,20 @@
+slug: mapakalamidad
+name: MapaKalamidad.ph
+tagLine: Community disaster reporting map
+description: Free disaster map that collects public reports through Facebook
+  Messenger, Telegram and Viber and displays them by province in real time,
+  alongside government agency input.
+sector: Disaster & Recovery
+secondarySectors:
+  - Public Safety
+affiliation: international
+tags:
+  - crowdsourcing
+  - disaster-reports
+  - flood
+  - real-time
+liveUrl: https://mapakalamidad.ph/
+techStack: []
+license: Unspecified
+maintainer: Yayasan Peta Bencana
+status: active

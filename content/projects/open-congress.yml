@@ -1,0 +1,26 @@
+slug: open-congress
+name: Open Congress Data & API
+tagLine: Open data on Philippine legislators and bills
+description: Community-maintained data and REST API on representatives, senators
+  and bills, compiled from official Senate and House sources. Manually encoded,
+  so errors are possible.
+sector: Elections & Governance
+secondarySectors:
+  - Law & Justice
+affiliation: bettergov
+tags:
+  - congress
+  - senate
+  - bills
+  - api
+  - open-data
+repoUrl: https://github.com/bettergovph/open-congress-data
+liveUrl: https://open-congress-api.bettergov.ph/
+techStack:
+  - Python
+  - Deno
+  - Hono
+  - Neo4j
+license: CC0-1.0
+maintainer: BetterGov.ph
+status: active

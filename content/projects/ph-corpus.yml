@@ -1,0 +1,21 @@
+slug: ph-corpus
+name: PH Legislative Corpus
+tagLine: Philippine bills as structured Markdown
+description: Structured repository of House and Senate legislative documents in
+  which every bill is a folder and every section is a tagged Markdown file.
+sector: Law & Justice
+secondarySectors:
+  - Elections & Governance
+affiliation: independent
+tags:
+  - legislation
+  - corpus
+  - bills
+  - open-data
+repoUrl: https://github.com/policyobservatory/ph-corpus
+techStack:
+  - Markdown
+  - YAML
+license: Unspecified
+maintainer: policyobservatory
+status: active

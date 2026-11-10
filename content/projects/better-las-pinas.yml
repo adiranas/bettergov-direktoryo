@@ -1,0 +1,20 @@
+slug: better-las-pinas
+name: BetterLasPiñas
+tagLine: Community portal for Las Piñas City
+description: Community-driven digital portal for Las Piñas City services,
+  government information, hotlines and community resources.
+sector: Government Services
+affiliation: independent
+tags:
+  - lgu
+  - las-pinas
+  - metro-manila
+  - services
+repoUrl: https://github.com/betterlaspinas/betterlaspinas
+liveUrl: https://betterlaspinas.org/
+techStack:
+  - Vue
+  - TypeScript
+license: MIT
+maintainer: BetterLasPiñas.org contributors
+status: active

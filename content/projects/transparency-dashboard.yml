@@ -1,0 +1,24 @@
+slug: transparency-dashboard
+name: BetterGov Transparency Dashboard
+tagLine: Search government procurement, tax and budget records
+description: Search and analyze PhilGEPS procurement records with contractor and
+  agency directories, spending charts and CSV export.
+sector: Transparency & Procurement
+secondarySectors:
+  - Taxes & Finance
+affiliation: bettergov
+tags:
+  - procurement
+  - philgeps
+  - dpwh
+  - contracts
+repoUrl: https://github.com/bettergovph/transparency-dashboard
+liveUrl: https://transparency.bettergov.ph/
+techStack:
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - MeiliSearch
+license: MIT
+maintainer: BetterGov.ph
+status: active

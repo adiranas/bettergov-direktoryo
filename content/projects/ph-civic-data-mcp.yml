@@ -1,0 +1,22 @@
+slug: ph-civic-data-mcp
+name: PH Civic Data MCP
+tagLine: Philippine public data as AI agent tools
+description: MCP server that exposes PSA OpenSTAT statistics, PSGC codes,
+  hazards, weather, procurement and election data as 41 agent-callable tools,
+  with no API keys.
+sector: Government Services
+affiliation: independent
+tags:
+  - mcp
+  - open-data
+  - psa
+  - ai-tools
+repoUrl: https://github.com/xmpuspus/ph-civic-data-mcp
+liveUrl: https://pypi.org/project/ph-civic-data-mcp/
+techStack:
+  - Python
+  - Docker
+  - MCP
+license: MIT
+maintainer: xmpuspus
+status: active

@@ -1,14 +1,17 @@
 slug: red-cross-ph
 name: Philippine Red Cross
 sector: Disaster & Recovery
+secondarySectors:
+  - Health
+affiliation: independent
 focusAreas:
   - Disaster response
   - Blood services
   - Emergency health
   - Safety training
   - Welfare services
-# Chartered by statute, so this is a law number and not an SEC registration.
-secOrGovRegNumber: Republic Act No. 10072
+# Chartered by statute, so the reference is a law, not an SEC registration.
+registrationRef: Republic Act No. 10072 (Philippine Red Cross Act of 2009)
 websiteUrl: https://redcross.org.ph/
 regionHeadquarters: National Capital Region (Mandaluyong City)
 status: active

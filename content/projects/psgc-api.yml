@@ -1,0 +1,20 @@
+slug: psgc-api
+name: PSGC API
+tagLine: Free REST API for Philippine geographic codes
+description: Free API listing regions, provinces, cities, municipalities and
+  barangays, based on Philippine Statistics Authority data.
+sector: Government Services
+affiliation: independent
+tags:
+  - api
+  - psgc
+  - barangay
+  - psa
+repoUrl: https://github.com/jeffreybernadas/psgc-api
+liveUrl: https://psgc.thecodebit.space/
+techStack:
+  - TypeScript
+  - Docker
+license: MIT
+maintainer: jeffreybernadas
+status: active

@@ -1,0 +1,17 @@
+slug: lawphil
+name: The Lawphil Project
+tagLine: Free databank of Philippine law and jurisprudence
+description: Free online databank of the Constitution, statutes, executive and
+  judicial issuances, and Philippine jurisprudence.
+sector: Law & Justice
+affiliation: independent
+tags:
+  - jurisprudence
+  - statutes
+  - constitution
+  - legal-research
+liveUrl: https://lawphil.net/
+techStack: []
+license: Unspecified
+maintainer: Arellano Law Foundation
+status: active
