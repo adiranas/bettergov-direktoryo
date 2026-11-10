@@ -1,0 +1,121 @@
+name: Submit a civic tech project
+description: Suggest an open tool, dataset, bot or public dashboard for the directory.
+title: "[Submit] "
+labels:
+  - needs-review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. A community moderator reviews each submission against `CURATION_CHECKLIST.md` in this repository before it is listed.
+
+        **This issue is public.** Do not include private phone numbers or personal email addresses.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+      placeholder: Flood Watch
+    validations:
+      required: true
+  - type: input
+    id: project-url
+    attributes:
+      label: Project URL
+      description: The live tool, dataset or dashboard. If it has no live site, paste the repository URL.
+      placeholder: https://example.ph
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      description: Leave blank if the source is not public.
+      placeholder: https://github.com/org/repo
+    validations:
+      required: false
+  - type: input
+    id: tagline
+    attributes:
+      label: One-line summary
+      placeholder: Flood-control map and DPWH project viewer
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Two or three sentences on what it does and who it helps.
+    validations:
+      required: true
+  - type: dropdown
+    id: sector
+    attributes:
+      label: Sector
+      options:
+        - Disaster & Recovery
+        - Social & Welfare
+        - Government Services
+        - Travel
+        - Health
+        - Education
+        - Business & Economy
+        - Taxes & Finance
+        - Labor & Employment
+        - Law & Justice
+        - Elections & Governance
+        - Transparency & Procurement
+        - Agriculture & Environment
+        - Infrastructure & Transport
+        - Public Safety
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: An SPDX identifier such as MIT or CC0-1.0. Write "Unspecified" if there is none.
+      placeholder: MIT
+    validations:
+      required: true
+  - type: input
+    id: tech-stack
+    attributes:
+      label: Tech stack
+      description: Comma-separated.
+      placeholder: TypeScript, React, PostGIS
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated keywords.
+      placeholder: flood-control, hazard-maps
+    validations:
+      required: false
+  - type: input
+    id: maintainer
+    attributes:
+      label: Maintainer name
+      description: The person, team or organization that runs the project.
+    validations:
+      required: true
+  - type: input
+    id: maintainer-contact
+    attributes:
+      label: Maintainer contact
+      description: A public channel, such as a GitHub handle or project email.
+      placeholder: "@github-handle"
+    validations:
+      required: true
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: Confirmation
+      options:
+        - label: It provides a public benefit and is not primarily a commercial product.
+          required: true
+        - label: It is non-partisan and does not promote a candidate, party or campaign.
+          required: true
+        - label: It does not collect personal data beyond what its stated purpose needs.
+          required: true

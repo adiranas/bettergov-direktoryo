@@ -1,0 +1,24 @@
+slug: flood-watch
+name: FloodLens PH (Flood Watch)
+tagLine: Flood-control map and DPWH project viewer
+description: >-
+  Interactive flood simulation and infrastructure planning tool that overlays
+  Project NOAH hazard maps with DPWH flood-control project locations, with
+  scenarios from current conditions up to 100-year floods.
+sector: Disaster & Recovery
+tags:
+  - flood-control
+  - hazard-maps
+  - dpwh
+  - project-noah
+  - gis
+repoUrl: https://github.com/bettergovph/flood-watch
+techStack:
+  - TypeScript
+  - React
+  - Vite
+  - MapLibre GL
+  - PostGIS
+license: MIT
+maintainer: BetterGov.ph
+status: active

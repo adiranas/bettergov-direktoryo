@@ -1,0 +1,17 @@
+/* Includes Tailwind, the Kapwa tokens, and the kapwa-* typography utilities. */
+@import "@bettergov/kapwa/styles";
+
+/* Relative to this file: lets Tailwind see classes used inside Kapwa components. */
+@source "../node_modules/@bettergov/kapwa";
+
+@theme inline {
+  --font-sans: var(--font-kapwa-sans);
+  --font-mono: var(--font-kapwa-mono);
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-kapwa-border-focus);
+    outline-offset: 2px;
+  }
+}
